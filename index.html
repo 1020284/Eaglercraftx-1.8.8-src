@@ -1,62 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Eaglercraft</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- You may need to include a favicon and stylesheets here -->
-    <style>
-        body {
-            background: #222;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        #container {
-            margin: 40px auto;
-            max-width: 800px;
-        }
-        #gameFrame {
-            width: 100vw;
-            height: 90vh;
-            border: none;
-            background: #000;
-        }
-        .loading {
-            margin: 60px 0;
-            font-size: 1.5em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Eaglercraft 1.8</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 40px;
+    }
+    iframe {
+      width: 90%;
+      height: 80vh;
+      border: none;
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Welcome to Eaglercraft</h1>
-        <div class="loading" id="loadingMsg">Loading Eaglercraft, please wait...</div>
-        <iframe id="gameFrame" style="display:none;"></iframe>
-    </div>
-    <script>
-        // Path to the Eaglercraft game client (typically a .html or .js loader)
-        const GAME_URL = "eaglercraft.html"; // Change this if your loader is named differently
+  <h1>Welcome to Eaglercraft 1.8</h1>
+  <p>Click below to start playing Minecraft in your browser!</p>
 
-        // Simple loader
-        window.onload = function() {
-            // Check if the game file exists (optional, for user experience)
-            fetch(GAME_URL, {method: "HEAD"})
-                .then(resp => {
-                    if (resp.ok) {
-                        document.getElementById('gameFrame').src = GAME_URL;
-                        document.getElementById('gameFrame').style.display = "block";
-                        document.getElementById('loadingMsg').style.display = "none";
-                    } else {
-                        document.getElementById('loadingMsg').innerText = "Could not find Eaglercraft game file!";
-                    }
-                })
-                .catch(() => {
-                    document.getElementById('loadingMsg').innerText = "Error loading Eaglercraft!";
-                });
-        };
-    </script>
+  <!-- Embed the game -->
+  <iframe src="client.html" title="Eaglercraft 1.8"></iframe>
+
+  <div class="footer">
+    <p>Powered by EaglercraftX | Hosted by You 😎</p>
+  </div>
 </body>
 </html>
